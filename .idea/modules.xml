@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/KotlinTest.iml" filepath="$PROJECT_DIR$/.idea/KotlinTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/KDocTest.iml" filepath="$PROJECT_DIR$/.idea/modules/KDocTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/KDocTest.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/KDocTest.app.iml" />
     </modules>
   </component>
 </project>
