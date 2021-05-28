@@ -38,6 +38,7 @@ android {
                 skipDeprecated.set(true)
                 includeNonPublic.set(true)
                 skipEmptyPackages.set(true)
+                suppressGeneratedFiles.set(true)
             }
         }
         pluginsMapConfiguration.set(
@@ -45,12 +46,25 @@ android {
         )
         outputDirectory.set(file("../documentation/html"))
     }
+    dokkaHtml{
+        dokkaSourceSets{
+            configureEach{
+//                perPackageOption {
+//                    matchingRegex.set("com.example.kdoctest.main") // will match all .internal packages and sub-packages
+//                    suppress.set(false)
+//                }
+            }
+        }
+    }
     tasks.dokkaJavadoc.configure {
         outputDirectory.set(file("../documentation/javadoc"))
     }
 
     tasks.dokkaGfm.configure {
         outputDirectory.set(file("../documentation/gfm"))
+    }
+    tasks.dokkaJekyll.configure {
+        outputDirectory.set(file("../documentation/jekyll"))
     }
 }
 
@@ -64,4 +78,6 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    dokkaGfmPlugin("org.jetbrains.dokka:kotlin-as-java-plugin:1.4.32")
+
 }
